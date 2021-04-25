@@ -1,32 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace GradeBook
+namespace Gradebook
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var grades = new List<double>() { 10.1, 98.9, 50.0 };
-            grades.Add(56.1);
+            var book = new Book("Adam's gradebook");
+            book.AddGrade(1.0);
+            book.AddGrade(11.19);
+            book.AddGrade(91.19);
+            var result = book.GetStats();
 
-            var total = 0.0;
-            foreach(double number in grades)
-            {
-                total += number;
-            }
-            
-            if (args.Length > 0)
-            {
-                // String concatenation
-                Console.WriteLine("Hello " + args[0] + "!");
-                // String interpolation
-                Console.WriteLine($"Hello {args[0]}!");
-            }
-            else {
-                Console.WriteLine($"Total is: {total}");
-                Console.WriteLine($"Average of grades is: {(total / grades.Count):N1}");
-            }
+            Console.WriteLine($"Highest grade is: {result.High}");
+            Console.WriteLine($"Lowest grade is: {result.Low}");
+            Console.WriteLine($"Average of grades is: {result.Average:N1}");
         }
     }
 }
