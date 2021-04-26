@@ -7,6 +7,19 @@ namespace Gradebook.Tests
     public class BookTests
     {
         [Fact]
+        public void VerifyAddGradeBoundaries()
+        {
+            // arange
+            var book = new Book("My book");
+            
+            // act
+            book.AddGrade(101.0);
+
+            // assert
+            Assert.Contains(101.0, book.grades);
+        }
+
+        [Fact]
         public void BookCalculatesAnAverageGrade()
         {
             // arrange

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\git\\csharplearning\\gradebook\\src\\Gradebook\\Gradebook.csproj": {}
+    "C:\\git\\csharplearning\\gradebook\\src\\Gradebook\\Gradebook.csproj": {}
   },
   "projects": {
-    "c:\\git\\csharplearning\\gradebook\\src\\Gradebook\\Gradebook.csproj": {
+    "C:\\git\\csharplearning\\gradebook\\src\\Gradebook\\Gradebook.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\git\\csharplearning\\gradebook\\src\\Gradebook\\Gradebook.csproj",
+        "projectUniqueName": "C:\\git\\csharplearning\\gradebook\\src\\Gradebook\\Gradebook.csproj",
         "projectName": "Gradebook",
-        "projectPath": "c:\\git\\csharplearning\\gradebook\\src\\Gradebook\\Gradebook.csproj",
+        "projectPath": "C:\\git\\csharplearning\\gradebook\\src\\Gradebook\\Gradebook.csproj",
         "packagesPath": "C:\\Users\\adamp\\.nuget\\packages\\",
-        "outputPath": "c:\\git\\csharplearning\\gradebook\\src\\Gradebook\\obj\\",
+        "outputPath": "C:\\git\\csharplearning\\gradebook\\src\\Gradebook\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\adamp\\AppData\\Roaming\\NuGet\\NuGet.Config"

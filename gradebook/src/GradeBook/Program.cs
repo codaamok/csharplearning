@@ -11,6 +11,7 @@ namespace Gradebook
             book.AddGrade(1.0);
             book.AddGrade(11.19);
             book.AddGrade(91.19);
+
             var result = book.GetStats();
 
             Console.WriteLine($"Highest grade is: {result.High}");
