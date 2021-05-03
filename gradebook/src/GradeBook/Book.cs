@@ -17,6 +17,34 @@ namespace Gradebook
             Name = name;
         }
 
+        public void AddLetterGrade(char letter)
+        {
+            switch (letter)
+            {
+                case 'A':
+                    AddGrade(90);
+                    break;
+                case 'B':
+                    AddGrade(80);
+                    break;
+                case 'C':
+                    AddGrade(70);
+                    break;
+                case 'D':
+                    AddGrade(60);
+                    break;
+                case 'E':
+                    AddGrade(50);
+                    break;
+                case 'F':
+                    AddGrade(0);
+                    break;
+                default:
+                    AddGrade(0);
+                    break;
+            }
+        }
+
         public void AddGrade(double grade)
         {
             if(grade >= 0 && grade <=100) 
@@ -24,7 +52,7 @@ namespace Gradebook
                 grades.Add(grade);
             }
             else {
-                Console.WriteLine("Invalid grade");
+                throw new ArgumentException($"Invalid grade");
             }
             
         }
@@ -35,6 +63,7 @@ namespace Gradebook
             result.Average = 0.0;
             result.High = double.MinValue;
             result.Low = double.MaxValue;
+            result.Count = grades.Count;
 
             var i = 0;
             do
@@ -46,6 +75,25 @@ namespace Gradebook
             } while (i < grades.Count);
 
             result.Average /= grades.Count;
+
+            switch (result.Average)
+            {
+                case var d when d >= 90:
+                    result.Letter = 'A';
+                    break;
+                case var d when d >= 80:
+                    result.Letter = 'B';
+                    break;
+                case var d when d >= 70:
+                    result.Letter = 'C';
+                    break;
+                case var d when d >= 60:
+                    result.Letter = 'D';
+                    break;
+                default:
+                    result.Letter = 'F';
+                    break;
+            }
         
             return result;
         }

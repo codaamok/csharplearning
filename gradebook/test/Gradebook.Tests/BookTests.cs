@@ -16,7 +16,7 @@ namespace Gradebook.Tests
             book.AddGrade(101.0);
 
             // assert
-            Assert.Contains(101.0, book.grades);
+            Assert.DoesNotContain(101.0, book.grades);
         }
 
         [Fact]
@@ -35,6 +35,7 @@ namespace Gradebook.Tests
             Assert.Equal(34.46, result.Average, 1);
             Assert.Equal(1.0, result.Low, 1);
             Assert.Equal(91.19, result.High, 1);
+            Assert.Equal('F', result.Letter);
         }
     }
 }
