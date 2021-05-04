@@ -3,7 +3,9 @@ using System.Collections.Generic;
 
 namespace Gradebook
 {
-    public class Book
+    public delegate void GradeAddedDelegate(object sender, EventArgs args);
+
+    public class Book : NamedObject
     {
         // This defines a constructor and will execute whenever we use the new keyboard
         // Must be of same name as the class and not have a return type e.g. "void"
@@ -11,10 +13,9 @@ namespace Gradebook
         // our class e.g.
         //   var book = new Book();
         // This is instantiating a new object of our class Book in a var named book
-        public Book(string name)
+        public Book(string name) : base(name)
         {
             grades = new List<double>();
-            Name = name;
         }
 
         public void AddLetterGrade(char letter)
@@ -50,12 +51,17 @@ namespace Gradebook
             if(grade >= 0 && grade <=100) 
             {
                 grades.Add(grade);
+                if(GradeAdded != null)
+                {
+                    GradeAdded(this, new EventArgs());
+                }
             }
             else {
                 throw new ArgumentException($"Invalid grade");
             }
-            
         }
+
+        public event GradeAddedDelegate GradeAdded;
 
         public Statistics GetStats()
         {
@@ -99,6 +105,6 @@ namespace Gradebook
         }
 
         public List<double> grades;
-        public string Name;
+        public const string category = "science";
     }
 }

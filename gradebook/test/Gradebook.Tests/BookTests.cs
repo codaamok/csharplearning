@@ -13,10 +13,10 @@ namespace Gradebook.Tests
             var book = new Book("My book");
             
             // act
-            book.AddGrade(101.0);
+            book.AddGrade(100.0);
 
             // assert
-            Assert.DoesNotContain(101.0, book.grades);
+            Assert.Contains(100.0, book.grades);
         }
 
         [Fact]
